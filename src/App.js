@@ -5,11 +5,13 @@ import { createStore } from 'redux';
 
 import reducers from './reducers';
 import { Header } from './components/common';
+import LibraryList from './components/LibraryList';
 
 const App = () => (
   <Provider store={createStore(reducers)}>
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <Header headerText="Tech Stack" />
+      <LibraryList />
     </SafeAreaView>
   </Provider>
 );
