@@ -1,5 +1,5 @@
-export const selectLibrary = (libraryId, selectedLibraryId) => {
-  console.log("Props selected library id " + selectedLibraryId);
+export const selectLibrary = (libraryId) => {
+  console.log("action executed")
   return {
     type: 'select_library',
     payload: libraryId

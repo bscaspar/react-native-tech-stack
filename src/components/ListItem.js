@@ -7,29 +7,29 @@ import * as actions from '../actions';
 class ListItem extends Component {
   renderDescription() {
     const { library, selectedLibraryId } = this.props;
-    console.log("renderDescription fired");
-    if (library.item.id === selectedLibraryId) {
+    console.log(this.props);
+    if (library.item.id === selectedLibraryId.selectedLibraryId) {
       return (
         <Text>{library.item.description}</Text>
       );
     }
+    console.log("returning null");
     return null;
   }
 
   render() {
     const { titleStyles } = styles;
     const { id, title } = this.props.library.item;
-    console.log('Rendered, id=' + id);
+
     return (
       <TouchableWithoutFeedback
-        onPress={() => this.props.selectLibrary(id, this.props.selectedLibraryId)}
+        onPress={() => this.props.selectLibrary(id)}
       >
         <View>
           <CardSection>
             <Text style={titleStyles}>{title}</Text>
           </CardSection>
           {this.renderDescription()}
-          {/* <Text>{description}</Text> */}
 
         </View>
       </TouchableWithoutFeedback>
