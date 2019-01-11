@@ -7,13 +7,11 @@ import * as actions from '../actions';
 class ListItem extends Component {
   renderDescription() {
     const { library, selectedLibraryId } = this.props;
-    console.log(this.props);
     if (library.item.id === selectedLibraryId.selectedLibraryId) {
       return (
         <Text>{library.item.description}</Text>
       );
     }
-    console.log("returning null");
     return null;
   }
 
@@ -47,13 +45,5 @@ const styles = {
 const mapStateToProps = (state) => {
   return { selectedLibraryId: state.selectedLibraryId };
 };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     onListItemPress: (id, selectedLibraryId) => {
-//       dispatch(actions.selectLibrary(id, selectedLibraryId));
-//     }
-//   };
-// };
 
 export default connect(mapStateToProps, actions)(ListItem);
